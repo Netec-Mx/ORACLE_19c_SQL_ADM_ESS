@@ -147,7 +147,55 @@
           TO_DATE('01-01-50','DD-MM-RR') AS d2_rr
    FROM dual;
    ```
-3. **Explica**: ¿Cómo determina Oracle el siglo con `YY` vs `RR`? Anota tu conclusión.
+
+
+3. Compara el uso de `RR` vs. `YY`
+
+  ```sql
+  ALTER SESSION SET NLS_DATE_LANGUAGE = 'AMERICAN';
+
+  COL valor format a15
+  COL con_yy format a15
+  COL con_rr format a15
+
+  SELECT
+    '49' AS valor,
+    TO_CHAR(TO_DATE('49','YY'), 'YYYY') AS con_yy,
+    TO_CHAR(TO_DATE('49','RR'), 'YYYY') AS con_rr
+  FROM dual
+  UNION ALL
+  SELECT
+    '50' AS valor,
+    TO_CHAR(TO_DATE('50','YY'), 'YYYY') AS con_yy,
+    TO_CHAR(TO_DATE('50','RR'), 'YYYY') AS con_rr
+  FROM dual
+  UNION ALL
+  SELECT
+    '12' AS valor,
+    TO_CHAR(TO_DATE('12','YY'), 'YYYY') AS con_yy,
+    TO_CHAR(TO_DATE('12','RR'), 'YYYY') AS con_rr
+  FROM dual
+  UNION ALL
+  SELECT
+    '97' AS valor,
+    TO_CHAR(TO_DATE('97','YY'), 'YYYY') AS con_yy,
+    TO_CHAR(TO_DATE('97','RR'), 'YYYY') AS con_rr
+  FROM dual;
+   ```
+
+<br/>
+
+#### Nota sobre **UNION ALL**
+
+`UNION ALL` permite combinar los resultados de varias consultas y mostrarlos **uno debajo del otro**, conservando **todas las filas**, incluso si son iguales.
+Es un operador eficiente cuando se desea **presentar varios bloques de resultados** en una sola salida, como en comparaciones o tablas resumidas.
+
+> Los operadores de conjunto se estudiarán con más detalle más adelante.
+
+<br/>
+
+
+4. **Explica**: ¿Cómo determina Oracle el siglo con `YY` vs `RR`? Anota tu conclusión.
 
 <br/><br/>
 
