@@ -236,7 +236,8 @@ Diseña **una sola consulta** que muestre:
 * `manager_last_name` (si existe),
 * `department_name` (si existe),
 * `region_name` del país donde se ubica el departamento (si existe).
-  **Restricciones:**
+
+**Restricciones:**
 * Debe ser **un solo SELECT** que combine **self join** y **outer joins** donde aplique.
 * Usa **`ON`** cuando los nombres de columnas difieran y **justifica** (en un comentario al inicio del script) por qué no usaste `USING` o `NATURAL` en cada unión.
 * Ordena por `employee_id`.
