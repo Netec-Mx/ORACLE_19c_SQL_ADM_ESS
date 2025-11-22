@@ -65,6 +65,10 @@ CREATE TABLE my_employees (
 ### 3. Comprueba las constraints:
 
 ```sql
+set linesize 200
+set pagesize 120
+col constraint_name format a25
+col constraint_type format a20
 SELECT constraint_name, constraint_type, status
 FROM user_constraints
 WHERE table_name IN ('MY_EMPLOYEES','MY_DEPARTMENTS')
