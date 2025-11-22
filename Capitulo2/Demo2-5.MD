@@ -18,12 +18,12 @@
 ## Tabla de ayuda - Constraints
 
 | **Constraint**         | **Descripción**                                     | **Comentario**                               |
-| ---------------------- | ------------------------------------------------------- | --------------------------------------------------------------- |
-| **PRIMARY KEY (PK)**   | Valor único y no nulo. Identifica filas.                | employee_id no se puede repetir ni quedar NULL.               |
-| **UNIQUE (UK)**        | No permite valores duplicados (sí permite varios NULL). | Dos emails iguales → error; NULL no cuenta como duplicado.    |
-| **FOREIGN KEY (FK)**   | El valor debe existir en la tabla padre.                | Solo puedes asignar departamentos que existan en MY_DEPARTMENTS.   |
-| **CHECK (salary > 0)** | Valida una condición lógica.                            | Salarios ≤ 0 no pasan; NULL sí, porque no viola la condición.” |
-| **NOT NULL**           | El valor es obligatorio.                                | hire_date no puede quedar vacío.                              |
+| ----------------------------- | ------------------------------------------------------- | --------------------------------------------------------------- |
+| **PRIMARY KEY (PK)**          | Valor único y no nulo. Identifica filas.                | employee_id no se puede repetir ni quedar NULL.               |
+| **UNIQUE (UK)**               | No permite valores duplicados (sí permite varios NULL). | Dos emails iguales → error; NULL no cuenta como duplicado.    |
+| **FOREIGN KEY (FK)**          | El valor debe existir en la tabla padre.                | Solo puedes asignar departamentos que existan en MY_DEPARTMENTS.   |
+| **CHECK (salary > 0)**        | Valida una condición lógica.                            | Salarios ≤ 0 no pasan; NULL sí, porque no viola la condición. |
+| **NOT NULL**                  | El valor es obligatorio.                                | hire_date no puede quedar vacío.                              |
 
 
 <br/><br/>
