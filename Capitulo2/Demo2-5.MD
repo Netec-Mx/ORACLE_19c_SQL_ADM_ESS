@@ -54,9 +54,9 @@ COMMIT;
 CREATE TABLE my_employees (
   employee_id   NUMBER CONSTRAINT emp_pk       PRIMARY KEY,
   email         VARCHAR2(50) CONSTRAINT emp_email_unk UNIQUE,
-  department_id NUMBER       CONSTRAINT emp_dept_fk REFERENCES my_departments(department_id),
-  hire_date     DATE         CONSTRAINT emp_hire_nn NOT NULL,
-  salary        NUMBER       CONSTRAINT emp_sal_ck CHECK (salary > 0)
+  department_id NUMBER       CONSTRAINT emp_dept_fok REFERENCES my_departments(department_id),
+  hire_date     DATE         CONSTRAINT emp_hire_date_nn NOT NULL,
+  salary        NUMBER       CONSTRAINT emp_salary_ck CHECK (salary > 0)
 );
 ```
 
