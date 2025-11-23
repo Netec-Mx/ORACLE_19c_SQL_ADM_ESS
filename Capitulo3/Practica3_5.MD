@@ -69,7 +69,6 @@ El siguiente diagrama ilustra la relación entre los archivos de parámetros en 
 
    ```sql
    CREATE PFILE FROM SPFILE;
-   -- ¿Cuál es el nombre por defecto?
    ```
 2. Crea una copia personalizada del SPFILE:
 
