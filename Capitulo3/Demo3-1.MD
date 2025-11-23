@@ -1,8 +1,12 @@
 
+# Demo 3.1
 
-# ¿Cómo ver en vivo los mensajes en el alert log cuando se hace ALTER DATABASE MOUNT?
+<br/><br/>
+## ¿Cómo ver en vivo los mensajes en el alert log cuando se hace ALTER DATABASE MOUNT?
 
-## **1. Identifica la ruta del alert log**
+<br/><br/>
+
+### **1. Identifica la ruta del alert log**
 
 En Oracle 12c en adelante (incluye 19c), el alert log está en ADWR:
 
@@ -24,7 +28,7 @@ Ejemplo típico en Linux:
 
 <br/><br/>
 
-## **2. Visualiza el alert log mientras ejecutas las órdenes**
+### **2. Visualiza el alert log mientras ejecutas las órdenes**
 
 En Linux:
 
@@ -42,13 +46,17 @@ ALTER DATABASE OPEN;
 
 <br/><br/>
 
-# **3. ¿Qué verán exactamente los alumnos al hacer ALTER DATABASE MOUNT?**
+### **3. ¿Qué verán exactamente al hacer ALTER DATABASE MOUNT?**
 
 Cuando ejecutas:
 
 ```sql
 ALTER DATABASE MOUNT;
+SELECT status FROM v$instance;
+SELECT open_mode FROM v$database;
 ```
+
+<br/>
 
 Verán líneas como:
 
@@ -61,6 +69,8 @@ Opening controlfile...
 Completed: ALTER DATABASE MOUNT
 ```
 
+<br/>
+
 ¿Qué demostramos con esto?
 
 * Oracle **leyó los archivos de control**.
@@ -68,9 +78,9 @@ Completed: ALTER DATABASE MOUNT
 * **Aún NO abrió datafiles** ni redo logs (eso ocurre en OPEN).
 * Todo quedó **registrado** en alert log.
 
+<br/><br/>
 
-
-# **4. También podemos leer desde SQL**
+### **4. También podemos leer desde SQL**
 
 Oracle tiene la vista:
 
@@ -93,7 +103,37 @@ Ventaja:
 ✔ No necesitan entrar al SO
 ✔ Funciona igual en Windows y Linux
 
+<br/><br/>
 
-##  **Resumen **
+### **5. ¿Qué verán exactamente al hacer ALTER DATABASE OPEN?**
+
+```sql
+ALTER DATABASE OPEN;
+SELECT status FROM v$instance;
+SELECT open_mode FROM v$database;
+```
+<br/><br/>
+
+Cómo identificar NOMOUNT, MOUNT y OPEN
+
+#### **NOMOUNT**
+
+* `V$INSTANCE.STATUS = 'STARTED'`
+* `V$DATABASE` dará error (porque no leyó control files aún)
+
+#### **MOUNT**
+
+* `V$INSTANCE.STATUS = 'MOUNTED'`
+* `V$DATABASE.OPEN_MODE = 'MOUNTED'`
+
+#### **OPEN**
+
+* `V$INSTANCE.STATUS = 'OPEN'`
+* `V$DATABASE.OPEN_MODE = 'READ WRITE'` (o `READ ONLY`)
+
+<br/><br/>
+
+
+##  Resumen 
 Para saber exactamente qué está haciendo Oracle cuando pasas de NOMOUNT a MOUNT, lo más confiable es revisar el alert log. 
 Aquí es donde Oracle registra cada cambio de estado de la instancia y cada lectura de control files, datafiles y redo logs.
