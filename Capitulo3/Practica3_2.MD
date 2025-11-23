@@ -20,16 +20,14 @@
 
 ## **Tabla de ayuda**
 
-| Comando o vista   | Descripción breve                                          | Ejemplo / Uso                                         |        |           |
-| ----------------- | ---------------------------------------------------------- | ----------------------------------------------------- | ------ | --------- |
-| `id`              | Muestra el usuario actual del sistema                      | `$ id`                                                |        |           |
-| `. oraenv`        | Activa las variables de entorno de Oracle                  | `$ . oraenv`                                          |        |           |
-| `env | grep ORA`  | Verifica variables de entorno relacionadas con Oracle      | `$ env | grep ORA`                                    |        |           |
-| `sqlplus`         | Cliente de línea de comandos para Oracle Database          | `$ sqlplus / as sysdba`                               |        |           |
-| `SHOW SGA`        | Muestra el tamaño de las áreas de memoria SGA              | `SQL> SHOW SGA;`                                      |        |           |
-| `SHOW USER`       | Indica el usuario actual en SQL*Plus                       | `SQL> SHOW USER;`                                     |        |           |
-| `DESC v$instance` | Describe las columnas de la vista dinámica de la instancia | `SQL> DESC v$instance;`                               |        |           |
-| `SELECT`          | Consulta información de vistas del diccionario             | `SQL> SELECT instance_name, status FROM v$instance;`  |        |           |
+| Comando o vista   | Descripción breve                                          | Ejemplo / Uso                                         |  
+| ----------------- | ---------------------------------------------------------- | ----------------------------------------------------- | 
+| `id`              | Muestra el usuario actual del sistema                      | `$ id`                                                |     
+| `. oraenv`        | Activa las variables de entorno de Oracle                  | `$ . oraenv`                                          |     
+| `sqlplus`         | Cliente de línea de comandos para Oracle Database          | `$ sqlplus / as sysdba`                               |      
+| `SHOW SGA`        | Muestra el tamaño de las áreas de memoria SGA              | `SQL> SHOW SGA;`                                      |      
+| `SHOW USER`       | Indica el usuario actual en SQL*Plus                       | `SQL> SHOW USER;`                                     |       
+| `DESC v$instance` | Describe las columnas de la vista dinámica de la instancia | `SQL> DESC v$instance;`                               |        
 
 
 
