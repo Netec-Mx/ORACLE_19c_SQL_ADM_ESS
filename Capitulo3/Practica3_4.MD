@@ -172,6 +172,12 @@ El diagrama ilustra la relación entre **SGA_TARGET** (memoria autoajustada), su
    SELECT name, value FROM v$parameter WHERE name LIKE 'db_%' ORDER BY name;
    ```
 
+3. Cierra el archivo de salida
+
+   ```
+   SPOOL OFF
+   ```
+
 <br/><br/>
 
 ### **Tarea 9. Desafío**
