@@ -41,7 +41,7 @@
 2. Verifica el usuario actual y sus grupos asociados:
 
    ```bash
-   $ id
+   id
    ```
 3. Asegúrate de estar autenticado como un usuario con privilegios para acceder a Oracle (por ejemplo, `oracle`).
 
@@ -52,7 +52,7 @@
 1. Actualiza las variables de entorno necesarias para la conexión:
 
    ```bash
-   $ . oraenv
+   . oraenv
    ```
 2. Cuando el sistema solicite el nombre de la base de datos, escribe:
 
@@ -62,7 +62,7 @@
 3. Comprueba las variables relacionadas con Oracle:
 
    ```bash
-   $ env | grep ORA
+   env | grep ORA
    ```
 
 <br/><br/>
@@ -72,29 +72,29 @@
 1. Inicia sesión con SQL*Plus como administrador del sistema:
 
    ```bash
-   $ sqlplus / as sysdba
+   sqlplus / as sysdba
    ```
 2. Una vez dentro, verifica los siguientes puntos:
 
    * **Estado de la base:**
 
      ```sql
-     SQL> SELECT instance_name, status FROM v$instance;
+     SELECT instance_name, status FROM v$instance;
      ```
    * **Tamaño de la memoria SGA:**
 
      ```sql
-     SQL> SHOW SGA;
+     SHOW SGA;
      ```
    * **Usuario conectado:**
 
      ```sql
-     SQL> SHOW USER;
+     SHOW USER;
      ```
    * **Descripción de la vista de instancia:**
 
      ```sql
-     SQL> DESC v$instance;
+     DESC v$instance;
      ```
 
 <br/><br/>
@@ -104,17 +104,17 @@
 1. Ejecuta nuevamente la consulta de instancia, esta vez agregando más columnas:
 
    ```sql
-   SQL> SELECT instance_name, status, database_status, version FROM v$instance;
+   SELECT instance_name, status, database_status, version FROM v$instance;
    ```
 2. Consulta los nombres de los **archivos de datos** asociados:
 
    ```sql
-   SQL> SELECT name FROM v$datafile;
+   SELECT name FROM v$datafile;
    ```
 3. Consulta los nombres de los **archivos de control**:
 
    ```sql
-   SQL> SELECT name FROM v$controlfile;
+   SELECT name FROM v$controlfile;
    ```
 
 <br/><br/>
