@@ -69,7 +69,7 @@ El diagrama ilustra la relación entre **SGA_TARGET** (memoria autoajustada), su
 2. Corrobora desde la vista de instancia:
 
    ```
-   SELECT instance_name, instance_role, instance_type FROM v$instance;
+   SELECT instance_name, instance_role, database_type FROM v$instance;
    ```
 
 <br/><br/>
