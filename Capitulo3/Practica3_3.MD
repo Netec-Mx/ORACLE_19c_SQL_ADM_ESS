@@ -19,14 +19,14 @@
 
 ## **Tabla de ayuda**
 
-| Comando / Vista                                                 | Descripción                                                    | Ejemplo / Uso                                                         |
-| --------------------------------------------------------------- | -------------------------------------------------------------- | --------------------------------------------------------------------- |
-| `SQL> HELP SHUTDOWN`                                            | Muestra ayuda sobre las opciones de cierre                     | `SQL> HELP SHUTDOWN;`                                                 |
-| `SHUTDOWN IMMEDIATE`                                            | Cierra la base de datos liberando usuarios y guardando cambios | `SQL> SHUTDOWN IMMEDIATE;`                                            |
-| `STARTUP`                                                       | Inicia la base de datos Oracle (por defecto hasta modo OPEN)   | `SQL> STARTUP;`                                                       |
-| `ALTER SYSTEM REGISTER`                                         | Registra la instancia en el Listener                           | `SQL> ALTER SYSTEM REGISTER;`                                         |
-| `SELECT instance_name, status, database_status FROM v$instance` | Verifica el estado actual de la instancia                      | `SQL> SELECT instance_name, status, database_status FROM v$instance;` |
-| `SHOW PARAMETER INSTANCE_TYPE`                                  | Muestra el tipo de instancia (ej. RDBMS)                       | `SQL> SHOW PARAMETER INSTANCE_TYPE;`                                  |
+| Comando / Vista                                                 | Descripción                                                    | 
+| --------------------------------------------------------------- | -------------------------------------------------------------- | 
+| `SQL> HELP SHUTDOWN`                                            | Muestra ayuda sobre las opciones de cierre                     | 
+| `SHUTDOWN IMMEDIATE`                                            | Cierra la base de datos liberando usuarios y guardando cambios | 
+| `STARTUP`                                                       | Inicia la base de datos Oracle (por defecto hasta modo OPEN)   | 
+| `ALTER SYSTEM REGISTER`                                         | Registra la instancia en el Listener                           | 
+| `SELECT instance_name, status, database_status FROM v$instance` | Verifica el estado actual de la instancia                      | 
+| `SHOW PARAMETER INSTANCE_TYPE`                                  | Muestra el tipo de instancia (ej. RDBMS)                       | 
 
 <br/><br/>
 
