@@ -45,13 +45,13 @@ El siguiente diagrama representa el ciclo de vida de una base de datos Oracle, m
 1. Abre una terminal y conéctate como administrador del sistema Oracle:
 
    ```bash
-   $ sqlplus / as sysdba
+   sqlplus / as sysdba
    ```
 
 2. Verifica el estado de la base de datos:
 
    ```sql
-   SQL> SELECT instance_name, status, database_status FROM v$instance;
+   SELECT instance_name, status, database_status FROM v$instance;
    ```
 
 <br/><br/>
@@ -61,7 +61,7 @@ El siguiente diagrama representa el ciclo de vida de una base de datos Oracle, m
 1. Solicita ayuda sobre el comando de cierre:
 
    ```sql
-   SQL> HELP SHUTDOWN;
+   HELP SHUTDOWN;
    ```
 2. Identifica las opciones disponibles: `NORMAL`, `TRANSACTIONAL`, `IMMEDIATE`, `ABORT`.
 
@@ -72,7 +72,7 @@ El siguiente diagrama representa el ciclo de vida de una base de datos Oracle, m
 1. Cierra la base de datos de forma inmediata:
 
    ```sql
-   SQL> SHUTDOWN IMMEDIATE;
+   SHUTDOWN IMMEDIATE;
    ```
 2. Espera el mensaje de confirmación:
 
@@ -89,12 +89,12 @@ El siguiente diagrama representa el ciclo de vida de una base de datos Oracle, m
 1. Vuelve a iniciar la base de datos con el comando:
 
    ```sql
-   SQL> STARTUP;
+   STARTUP;
    ```
 2. Verifica que el estado de la base de datos sea **OPEN**:
 
    ```sql
-   SQL> SELECT instance_name, status, database_status FROM v$instance;
+   SELECT instance_name, status, database_status FROM v$instance;
    ```
 
 <br/><br/>
@@ -104,7 +104,7 @@ El siguiente diagrama representa el ciclo de vida de una base de datos Oracle, m
 1. Registra la instancia manualmente en el Listener:
 
    ```sql
-   SQL> ALTER SYSTEM REGISTER;
+   ALTER SYSTEM REGISTER;
    ```
 2. Verifica el registro desde la terminal del sistema operativo:
 
@@ -119,7 +119,7 @@ El siguiente diagrama representa el ciclo de vida de una base de datos Oracle, m
 1. Comprueba el tipo de instancia que utiliza Oracle:
 
    ```sql
-   SQL> SHOW PARAMETER INSTANCE_TYPE;
+   SHOW PARAMETER INSTANCE_TYPE;
    ```
 
    El valor esperado debe ser:
