@@ -190,9 +190,11 @@ SET LINESIZE 200 PAGESIZE 100 TRIMSPOOL ON;
 SPOOL practica_3_4_reporte.lst; 
 SHOW PARAMETER spfile; 
 SELECT DECODE(value, NULL, 'PFILE/DEFAULT', 'SPFILE') origen FROM v$parameter WHERE name='spfile'; 
-SHOW PARAMETER sga_max_size; SHOW PARAMETER sga_target; 
-SHOW PARAMETER shared_pool_size; SHOW PARAMETER db_cache_size; 
-ELECT component,current_size FROM v$sga_dynamic_components WHERE current_size>0 ORDER BY component; 
+SHOW PARAMETER sga_max_size; 
+SHOW PARAMETER sga_target; 
+SHOW PARAMETER shared_pool_size; 
+SHOW PARAMETER db_cache_size; 
+SELECT component, current_size FROM v$sga_dynamic_components WHERE current_size>0 ORDER BY component; 
 SPOOL OFF;
 ```
 <br/><br/>
