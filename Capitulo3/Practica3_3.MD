@@ -109,7 +109,7 @@ El siguiente diagrama representa el ciclo de vida de una base de datos Oracle, m
 2. Verifica el registro desde la terminal del sistema operativo:
 
    ```bash
-   $ lsnrctl status
+   ! lsnrctl status
    ```
 
 <br/><br/>
