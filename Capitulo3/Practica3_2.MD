@@ -24,7 +24,7 @@
 | ----------------- | ---------------------------------------------------------- | ----------------------------------------------------- | ------ | --------- |
 | `id`              | Muestra el usuario actual del sistema                      | `$ id`                                                |        |           |
 | `. oraenv`        | Activa las variables de entorno de Oracle                  | `$ . oraenv`                                          |        |           |
-| `env              | grep ORA`                                                  | Verifica variables de entorno relacionadas con Oracle | `$ env | grep ORA` |
+| `env | grep ORA`  | Verifica variables de entorno relacionadas con Oracle      | `$ env | grep ORA`                                    |        |           |
 | `sqlplus`         | Cliente de línea de comandos para Oracle Database          | `$ sqlplus / as sysdba`                               |        |           |
 | `SHOW SGA`        | Muestra el tamaño de las áreas de memoria SGA              | `SQL> SHOW SGA;`                                      |        |           |
 | `SHOW USER`       | Indica el usuario actual en SQL*Plus                       | `SQL> SHOW USER;`                                     |        |           |
