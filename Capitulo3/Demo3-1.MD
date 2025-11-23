@@ -100,8 +100,8 @@ WHERE originating_timestamp > SYSDATE - (1/24/60*5); -- últimos 5 minutos
 ```
 
 Ventaja:
-✔ No necesitan entrar al SO
-✔ Funciona igual en Windows y Linux
+* No necesitan entrar al SO
+* Funciona igual en Windows y Linux
 
 <br/><br/>
 
