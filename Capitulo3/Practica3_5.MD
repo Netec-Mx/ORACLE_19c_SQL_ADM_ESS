@@ -53,12 +53,12 @@ El siguiente diagrama ilustra la relación entre los archivos de parámetros en 
 1. Conéctate a la instancia **orcl** usando SQL*Plus con privilegios de administrador:
 
    ```bash
-   $ sqlplus / as sysdba
+   sqlplus / as sysdba
    ```
 2. Verifica el estado de la base de datos:
 
    ```sql
-   SQL> SELECT status FROM v$instance;
+   SELECT status FROM v$instance;
    ```
 
 <br/><br/>
@@ -68,12 +68,12 @@ El siguiente diagrama ilustra la relación entre los archivos de parámetros en 
 1. Crea una copia del SPFILE con el nombre predeterminado:
 
    ```sql
-   SQL> CREATE PFILE FROM SPFILE;
+   CREATE PFILE FROM SPFILE;
    ```
 2. Crea una copia personalizada del SPFILE:
 
    ```sql
-   SQL> CREATE PFILE='orclbackup.ora' FROM SPFILE;
+   CREATE PFILE='orclbackup.ora' FROM SPFILE;
    ```
 
 <br/><br/>
@@ -83,17 +83,17 @@ El siguiente diagrama ilustra la relación entre los archivos de parámetros en 
 1. Desde el sistema operativo, verifica la existencia de los archivos:
 
    ```bash
-   $ ls -l $ORACLE_HOME/dbs/*orcl*.ora
+   ls -l $ORACLE_HOME/dbs/*orcl*.ora
    ```
 2. Identifica qué archivos son de texto plano:
 
    ```bash
-   $ file $ORACLE_HOME/dbs/*.ora
+   file $ORACLE_HOME/dbs/*.ora
    ```
 3. Revisa el contenido del archivo de texto asociado a **orcl**:
 
    ```bash
-   $ cat $ORACLE_HOME/dbs/init*.ora
+   cat $ORACLE_HOME/dbs/init*.ora
    ```
 
 <br/><br/>
@@ -103,12 +103,12 @@ El siguiente diagrama ilustra la relación entre los archivos de parámetros en 
 1. En SQL*Plus, modifica un parámetro temporalmente (ejemplo):
 
    ```sql
-   SQL> ALTER SYSTEM SET open_cursors=400 SCOPE=MEMORY;
+   ALTER SYSTEM SET open_cursors=400 SCOPE=MEMORY;
    ```
 2. Verifica el valor actual del parámetro:
 
    ```sql
-   SQL> SHOW PARAMETER open_cursors;
+   SHOW PARAMETER open_cursors;
    ```
 
 <br/><br/>
@@ -118,12 +118,12 @@ El siguiente diagrama ilustra la relación entre los archivos de parámetros en 
 1. Detén la instancia de base de datos:
 
    ```sql
-   SQL> SHUTDOWN IMMEDIATE;
+   SHUTDOWN IMMEDIATE;
    ```
 2. Inicia la base de datos utilizando el archivo **orclbackup.ora**:
 
    ```sql
-   SQL> STARTUP PFILE='$ORACLE_HOME/dbs/orclbackup.ora';
+   STARTUP PFILE='$ORACLE_HOME/dbs/orclbackup.ora';
    ```
 3. Verifica nuevamente el valor del parámetro modificado.
 
