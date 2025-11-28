@@ -50,6 +50,9 @@ Verificar el privilegio de `grt`, como DBA:
 ```sql
 conn sys/Oracle1 as sysdba
 
+set linesize 200
+col grantee format a20
+
 SELECT grantee, privilege, admin_option
 FROM   dba_sys_privs
 WHERE  grantee in ('GRT', 'U1', 'HR');
@@ -76,13 +79,24 @@ SELECT user FROM dual;
 Sigue conectado como `grt`:
 
 ```sql
+
+conn u1/u1
+
+conn grt/grt
+
 GRANT CREATE SESSION TO u1 WITH ADMIN OPTION;
+
+conn u1/u1
+
 ```
 
 Verifícalo como SYS:
 
 ```sql
-CONNECT sys/tu_password AS SYSDBA;
+CONNECT sys/Oracle1 AS SYSDBA;
+
+set linesize 200
+col grantee format a20
 
 SELECT grantee, privilege, admin_option
 FROM   dba_sys_privs
@@ -107,6 +121,9 @@ Verifica de nuevo como SYS:
 ```sql
 CONNECT sys/Oracle1 AS SYSDBA;
 
+set linesize 200
+col grantee format a20
+
 SELECT grantee, privilege, admin_option
 FROM   dba_sys_privs
 WHERE  grantee in ('GRT', 'U1', 'HR');
@@ -123,6 +140,16 @@ Vuelve a conectarte como `grt`:
 CONNECT grt/grt;
 
 REVOKE CREATE SESSION FROM grt;
+
+CONNECT sys/Oracle1 AS SYSDBA;
+
+set linesize 200
+col grantee format a20
+
+SELECT grantee, privilege, admin_option
+FROM   dba_sys_privs
+WHERE  grantee in ('GRT', 'U1', 'HR');
+
 ```
 
 <br/><br/>
