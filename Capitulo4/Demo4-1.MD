@@ -150,6 +150,9 @@ SELECT grantee, privilege, admin_option
 FROM   dba_sys_privs
 WHERE  grantee in ('GRT', 'U1', 'HR');
 
+-- Darle CREATE SESSION 
+GRANT CREATE SESSION TO grt;
+
 ```
 
 <br/><br/>
