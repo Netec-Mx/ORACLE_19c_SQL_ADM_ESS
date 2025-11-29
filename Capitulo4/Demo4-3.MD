@@ -1,6 +1,6 @@
 
 
-# DEMO 4.3 Terminación de Sesión por IDLE_TIME y PMON en acción
+# Demo 4.3 Terminación de Sesión por IDLE_TIME y PMON en acción
 
 
 ## Tarea 1. LABORES DE LIMPIEZA (como SYS)
