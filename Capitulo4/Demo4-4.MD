@@ -137,7 +137,6 @@ SELECT DISTINCT
        s.username,
        s.osuser,
        sci.authentication_type,
-       s.machine,
        s.program
 FROM   v$session s
 JOIN   v$session_connect_info sci
