@@ -99,7 +99,6 @@ Crear tabla grande:
 
 ```sql
 CREATE TABLE t_demo AS
-
 SELECT rownum id,
        rpad('X',400,'X') txt
 FROM   dual
