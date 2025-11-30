@@ -3,8 +3,39 @@
 
 ## Temas
 
-* Parámetro:  `TEMP_UNDO_ENABLED`
-* Tablas Temporales
+#### 1. Parámetro `TEMP_UNDO_ENABLED` 
+
+`TEMP_UNDO_ENABLED` es un parámetro introducido en Oracle 12c que controla **dónde se almacena el UNDO generado por operaciones sobre tablas temporales (GTTs)**.
+
+
+* Las GTT **siempre** almacenan sus datos en TEMP, con o sin temporary undo.
+* `TEMP_UNDO_ENABLED` **no afecta a tablas permanentes**.
+* No elimina el UNDO por completo; elimina solo la necesidad de UNDO “normal”.
+* Con `TEMP_UNDO_ENABLED = FALSE`: consumo de UNDO se ve en `V$TRANSACTION` y `V$UNDOSTAT`.
+* Con `TEMP_UNDO_ENABLED = TRUE`: el consumo se mueve hacia `V$TEMPUNDOSTAT` y `V$SORT_USAGE`.
+
+#### 2. Tablas Temporales Globales (GTT)
+
+Las **GLOBAL TEMPORARY TABLES (GTT)** son tablas cuyo **esquema es permanente**, pero cuyos **datos son siempre temporales** y solo visibles para cada sesión.
+
+* La **definición** de la tabla es permanente (existe en el diccionario).
+* Los **datos** son temporales y **privados por sesión**.
+* Los datos se almacenan en el **tablespace TEMP**, no en uno permanente.
+* Se pueden definir dos modos:
+
+  * `ON COMMIT DELETE ROWS` → los datos desaparecen al COMMIT.
+  * `ON COMMIT PRESERVE ROWS` → los datos duran toda la sesión.
+
+* Usan **undo mínimo**, porque no requieren mantener imágenes para consistencia entre sesiones.
+
+
+Ver GTTs del usuario:
+
+```sql
+set linesize 200
+col table_name format a30
+SELECT table_name, temporary, duration FROM user_tables WHERE temporary = 'Y' order by 1;
+```
 
 
 <br/><br/>
