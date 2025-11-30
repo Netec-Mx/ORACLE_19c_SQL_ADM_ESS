@@ -196,7 +196,22 @@ Con los datos reales que obtuvimos la salida es muy similar a lo siguiente:
 | GTT `T_TEMP` (ON COMMIT DELETE ROWS) | 50,000           | 1         | 1         |
 
 
-> **Conclusiones:**
+<br/><br/>
+
+
+
+## Tarea 6. Limpieza final
+
+```sql
+ROLLBACK;
+
+DROP TABLE t_normal PURGE;
+DROP TABLE t_temp   PURGE;
+```
+
+
+
+## Conclusiones:
 1. En ambos casos, **las filas sí existen** (comprobado con `COUNT(*)`).
 2. La **tabla normal** genera **UNDO proporcional al número de filas**:
    * mucha más presión sobre el tablespace UNDO.
@@ -208,15 +223,6 @@ Con los datos reales que obtuvimos la salida es muy similar a lo siguiente:
    * pero la cantidad es **mínima** comparada con una tabla normal.
 
 <br/><br/>
-
-## Tarea 6. Limpieza final
-
-```sql
-ROLLBACK;
-
-DROP TABLE t_normal PURGE;
-DROP TABLE t_temp   PURGE;
-```
 
  
 > **Observación:** Para mayor claridad, puedes repetir la demo pero con el valor de `TEMP_UNDO_ENABLED=FALSE`
