@@ -210,6 +210,7 @@ DROP TABLE t_temp   PURGE;
 ```
 
 
+<br/><br/>
 
 ## Conclusiones:
 1. En ambos casos, **las filas sí existen** (comprobado con `COUNT(*)`).
