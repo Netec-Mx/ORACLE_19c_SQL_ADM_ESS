@@ -66,6 +66,10 @@ desc user_types
 
 SELECT count(*) from user_types;
 
+set linesize 200
+col type_name format a15
+col typecode format a15
+
 SELECT type_name, typecode FROM user_types WHERE  type_name = 'PHONE_LIST_T';
 
 ```
@@ -97,6 +101,9 @@ NESTED TABLE telefonos
 Verifica:
 
 ```sql
+set linesize 200
+col table_name format a30
+col nested format a10
 SELECT table_name, nested FROM user_tables
 WHERE table_name IN ('CLIENTES_NT_DEMO', 'CLIENTES_PHONES_NT');
 ```
@@ -174,9 +181,9 @@ ORDER BY c.id_cliente, telefono;
 
 ```sql
 set linesize 200
-col table_name format a15
-col parent_table_name format a15
-col parent_table_column format a15
+col table_name format a25
+col parent_table_name format a25
+col parent_table_column format a25
 
 SELECT table_name, parent_table_name, parent_table_column
 FROM   user_nested_tables
@@ -196,9 +203,10 @@ WHERE  parent_table_name = 'CLIENTES_NT_DEMO';
 
 ```sql
 set linesize 200
-col table_name format a15
-col column_name format a20
-col data_type format a10
+col table_name format a25
+col column_name format a25
+col data_type format a15
+col qualified_col_name format a15
 
 
 SELECT table_name, column_name, data_type, data_length, nullable, internal_column_id, qualified_col_name
@@ -237,7 +245,6 @@ Verifica:
 
 ```sql
 set linesize 200
-col id_cliente format a15
 col nombre format a15
 col telefono a15
 
