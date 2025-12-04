@@ -35,6 +35,8 @@
 
 El siguiente esquema muestra el flujo general de una carga de datos con **SQL*Loader**:
 
+<br/><br/>
+
 ![SQL*LOADER](../images/p7-2.png)
 
 > El archivo `.bad` se genera solo si existen errores de carga.
@@ -48,9 +50,9 @@ El siguiente esquema muestra el flujo general de una carga de datos con **SQL*Lo
 1. Configura el ambiente y ejecuta el script inicial:
 
    ```bash
-   $ . oraenv  # orcl
-   $ cd $HOME/codes/07_movimientos
-   $ sqlplus / as sysdba @p02.sql
+   . oraenv  # orcl
+   cd $HOME/codes/07_movimientos
+   sqlplus / as sysdba @p02.sql
    ```
 
 2. Si no tienes el archivo p02.sql, puedes tomar el código del siguiente bloque:
@@ -91,9 +93,9 @@ El siguiente esquema muestra el flujo general de una carga de datos con **SQL*Lo
 1. Localiza y analiza el archivo `productos.dat`:
 
    ```bash
-   $ cd $HOME/codes/07_movimientos
-   $ file productos.dat
-   $ cat productos.dat
+   cd $HOME/codes/07_movimientos
+   file productos.dat
+   cat productos.dat
    ```
 
    Observa el formato y la cantidad de columnas que se insertarán.
@@ -105,7 +107,7 @@ El siguiente esquema muestra el flujo general de una carga de datos con **SQL*Lo
 1. Ejecuta la carga directa sin archivo de control:
 
    ```bash
-   $ sqlldr userloader/Oracle1 table=productos
+   sqlldr userloader/Oracle1 table=productos
    ```
 
 <br/><br/>
@@ -115,17 +117,16 @@ El siguiente esquema muestra el flujo general de una carga de datos con **SQL*Lo
 1. Revisa los archivos de bitácora generados:
 
    ```bash
-   $ cd $HOME/codes/07_movimientos
-   $ file productos.log
-   $ more productos.log
+   cd $HOME/codes/07_movimientos
+   file productos.log
+   more productos.log
    ```
 
-2. Verifica la información cargada:
+2. Verifica la información cargada con el usuario `userloader`, contraseña `Oracle1`:
 
    ```bash
-   $ sqlplus userloader/Oracle1
-   SQL> SELECT COUNT(*) FROM productos;
-   SQL> SELECT * FROM productos;
+   SELECT COUNT(*) FROM productos;
+   SELECT * FROM productos;
    ```
 
 <br/><br/>
@@ -135,8 +136,8 @@ El siguiente esquema muestra el flujo general de una carga de datos con **SQL*Lo
 1. Como DBA, ejecuta el siguiente script de preparación:
 
    ```bash
-   $ cd $HOME/codes/07_movimientos
-   $ sqlplus / as sysdba @p03.sql
+   cd $HOME/codes/07_movimientos
+   sqlplus / as sysdba @p03.sql
    ```
 
 <br/><br/>
@@ -146,10 +147,10 @@ El siguiente esquema muestra el flujo general de una carga de datos con **SQL*Lo
 1. Examina el archivo `datos.dat`:
 
    ```bash
-   $ cd $HOME/codes/07_movimientos
-   $ ls -l datos.dat
-   $ file datos.dat
-   $ wc -l datos.dat  # Número de registros a insertar
+   cd $HOME/codes/07_movimientos
+   ls -l datos.dat
+   file datos.dat
+   wc -l datos.dat  # Número de registros a insertar
    ```
 
 <br/><br/>
@@ -159,7 +160,7 @@ El siguiente esquema muestra el flujo general de una carga de datos con **SQL*Lo
 1. Ejecuta SQL*Loader con el archivo de control `p03.ctl`:
 
    ```bash
-   $ sqlldr userid=userloader/Oracle1 control=p03.ctl log=labdatos.log data=datos.dat
+   sqlldr userid=userloader/Oracle1 control=p03.ctl log=labdatos.log data=datos.dat
    ```
 
 <br/><br/>
@@ -169,20 +170,19 @@ El siguiente esquema muestra el flujo general de una carga de datos con **SQL*Lo
 1. Revisa la bitácora generada:
 
    ```bash
-   $ cd $HOME/codes/07_movimientos
-   $ more labdatos.log
+   cd $HOME/codes/07_movimientos
+   more labdatos.log
    ```
 
 <br/><br/>
 
 ### **Tarea 9. Verificación de carga**
 
-1. Valida la información cargada en la tabla destino:
+1. Valida la información cargada en la tabla destino, con el usuario `userloader` y contraseña `Oracle1`:
 
    ```bash
-   $ sqlplus userloader/Oracle1
-   SQL> SELECT COUNT(*) FROM cruce_ccm;
-   SQL> SELECT * FROM cruce_ccm;
+   SELECT COUNT(*) FROM cruce_ccm;
+   SELECT * FROM cruce_ccm;
    ```
 
 <br/><br/>
@@ -205,11 +205,10 @@ Ejecuta la carga y analiza la bitácora resultante.
 
   * **Carga express** de la tabla `productos`.
   * **Carga controlada** mediante archivo `p03.ctl` hacia la tabla `cruce_ccm`.
-* Las bitácoras (`productos.log`, `labdatos.log`) muestran el número de registros cargados exitosamente.
-* El conteo de filas en las tablas `userloader.productos` y `cruce_ccm` coincide con el número de registros en los archivos `.dat`.
+  * Las bitácoras (`productos.log`, `labdatos.log`) muestran el número de registros cargados exitosamente.
+  * El conteo de filas en las tablas `userloader.productos` y `cruce_ccm` coincide con el número de registros en los archivos `.dat`.
 
  
-
 ```sql
 SQL> SELECT COUNT(*) FROM userloader.productos;
 COUNT(*) = 10
