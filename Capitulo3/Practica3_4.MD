@@ -34,6 +34,9 @@
 ## **Objetivo visual**
 
 El diagrama ilustra la relación entre **SGA_TARGET** (memoria autoajustada), su tope **SGA_MAX_SIZE** y componentes como **Shared Pool** y **Database Buffer Cache**.
+
+<br/><br/>
+
 ![diagrama1](../images/p3-4v.png)
 
 <br/><br/>
@@ -165,6 +168,7 @@ El diagrama ilustra la relación entre **SGA_TARGET** (memoria autoajustada), su
    FROM v$parameter
    ORDER BY name;
    ```
+
 2. Ejemplos de filtro:
 
    ```
