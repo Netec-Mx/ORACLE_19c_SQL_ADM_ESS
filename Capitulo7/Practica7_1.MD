@@ -36,6 +36,8 @@
 
 El siguiente diagrama representa el flujo lógico del proceso de exportación e importación mediante **Oracle Data Pump**:
 
+<br/><br/>
+
 ![expdp & impdp](../images/p7-1.png)
 
 <br/><br/>
@@ -47,17 +49,17 @@ El siguiente diagrama representa el flujo lógico del proceso de exportación e 
 1. Conéctate a la base de datos con privilegios SYSDBA:
 
    ```bash
-   $ . oraenv   # orcl
-   $ sqlplus / as sysdba
+   . oraenv   # orcl
+   sqlplus / as sysdba
    ```
 2. Consulta el directorio configurado para Data Pump:
 
    ```sql
-   SQL> SET linesize 160
-   SQL> COL owner FORMAT a15
-   SQL> COL directory_name FORMAT a25
-   SQL> COL directory_path FORMAT a60
-   SQL> SELECT owner, directory_name, directory_path FROM dba_directories;
+   SET linesize 160
+   COL owner FORMAT a15
+   COL directory_name FORMAT a25
+   COL directory_path FORMAT a60
+   SELECT owner, directory_name, directory_path FROM dba_directories;
    ```
 
    *Ejemplo típico:* `/u01/app/oracle/admin/orcl/dpdump/`
@@ -70,7 +72,7 @@ El siguiente diagrama representa el flujo lógico del proceso de exportación e 
 1. Ejecuta el script de preparación:
 
    ```bash
-   $ sqlplus / as sysdba @$HOME/codes/07_movimiento/p01.sql
+   sqlplus / as sysdba @$HOME/codes/07_movimiento/p01.sql
    ```
 
 2. En caso de no tener el archivo p01.sql, puedes tomar el código del siguiente bloque
@@ -94,10 +96,11 @@ El siguiente diagrama representa el flujo lógico del proceso de exportación e 
 
    quit
    ```
+
 2. Elimina posibles archivos previos:
 
    ```bash
-   $ rm -r /u01/app/oracle/admin/orcl/dpdump/*.dmp
+   rm -r /u01/app/oracle/admin/orcl/dpdump/*.dmp
    ```
 
 <br/><br/>
@@ -107,7 +110,7 @@ El siguiente diagrama representa el flujo lógico del proceso de exportación e 
 Concede permisos al usuario `userdp`:
 
 ```sql
-SQL> GRANT READ, WRITE ON DIRECTORY data_pump_dir TO userdp;
+GRANT READ, WRITE ON DIRECTORY data_pump_dir TO userdp;
 ```
 
 <br/><br/>
@@ -117,7 +120,7 @@ SQL> GRANT READ, WRITE ON DIRECTORY data_pump_dir TO userdp;
 Ejecuta la exportación con `expdp`:
 
 ```bash
-$ expdp userdp/Oracle1 \
+  expdp userdp/Oracle1 \
   dumpfile=HR_EXP%U.dmp \
   directory=DATA_PUMP_DIR \
   logfile=hr_ex_exp.log \
@@ -127,7 +130,7 @@ $ expdp userdp/Oracle1 \
 Verifica los archivos generados:
 
 ```bash
-$ ls -l /u01/app/oracle/admin/orcl/dpdump/*.dmp
+ls -l /u01/app/oracle/admin/orcl/dpdump/*.dmp
 ```
 
 <br/><br/>
@@ -137,7 +140,7 @@ $ ls -l /u01/app/oracle/admin/orcl/dpdump/*.dmp
 Importa la tabla `EMPLOYEES` remapeando el esquema:
 
 ```bash
-$ impdp userdp/Oracle1 \
+impdp userdp/Oracle1 \
   directory=DATA_PUMP_DIR \
   dumpfile=HR_EXP01.dmp \
   REMAP_SCHEMA=hr:userdp \
@@ -152,16 +155,17 @@ $ impdp userdp/Oracle1 \
 1. Conéctate como `userdp`:
 
    ```bash
-   $ . oraenv  # orcl
-   $ sqlplus userdp/Oracle1
+   . oraenv  # orcl
+   sqlplus userdp/Oracle1
    ```
+
 2. Verifica la importación:
 
    ```sql
-   SQL> SHOW USER;
-   SQL> SELECT COUNT(*) FROM employees;
-   SQL> COL object_name FORMAT a20;
-   SQL> SELECT object_name, object_type FROM user_objects;
+   SHOW USER;
+   SELECT COUNT(*) FROM employees;
+   COL object_name FORMAT a20;
+   SELECT object_name, object_type FROM user_objects;
    ```
 
 <br/><br/>
