@@ -185,6 +185,8 @@ Diseña un script (un solo bloque de ejecución) que:
 * Para contar miembros por grupo: `COUNT(*) OVER (PARTITION BY group#)` en una CTE.
 
 
+<br/><br/>
+
 ## **Resultado Esperado**
 
 Al finalizar, deberás tener:
