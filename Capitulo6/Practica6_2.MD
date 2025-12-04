@@ -34,6 +34,9 @@
 
 El siguiente diagrama muestra la relación entre el cliente Oracle y el nuevo listener configurado:
 
+
+<br/><br/>
+
 ![LISTENERPRA](../images/p6-2.png)
 
 <br/><br/>
@@ -57,7 +60,7 @@ El siguiente diagrama muestra la relación entre el cliente Oracle y el nuevo li
 1. Ejecuta la herramienta **Oracle Net Manager**:
 
    ```bash
-   $ netmgr
+   netmgr
    ```
 2. En el árbol de navegación, selecciona **Listeners**.
 3. Haz clic en el símbolo **+ (verde)** para agregar un nuevo listener.
@@ -67,6 +70,7 @@ El siguiente diagrama muestra la relación entre el cliente Oracle y el nuevo li
 
    * **Host:** `localhost`
    * **Port:** `1551`
+
 7. Guarda los cambios desde el menú **File → Save Network Configuration**.
 
 <br/><br/>
@@ -79,16 +83,19 @@ El siguiente diagrama muestra la relación entre el cliente Oracle y el nuevo li
    $ more $ORACLE_HOME/network/admin/listener.ora
    $ more $ORACLE_HOME/network/admin/tnsnames.ora
    ```
+
 2. Inicia el nuevo listener:
 
    ```bash
    $ lsnrctl start LISTENERPRA
    ```
+
 3. Verifica su estado:
 
    ```bash
    $ lsnrctl status LISTENERPRA
    ```
+
 4. Comprueba que esté escuchando en el puerto **1551** y asociado a la base de datos **orcl**.
 
 <br/><br/>
@@ -106,8 +113,6 @@ Luego, identifica y explica las diferencias entre `LISTENERPRA` y `LISTENERLAB` 
 * Listener `LISTENERPRA` creado correctamente con protocolo **TCP/IP**, host `localhost` y puerto `1551`.
 * Archivos `listener.ora` y `tnsnames.ora` actualizados y guardados sin errores.
 * El comando `lsnrctl status LISTENERPRA` muestra el listener en estado **READY** y asociado al servicio **orcl**.
-
-
 
 ```
 LSNRCTL for Linux: Version 19.0.0.0.0
