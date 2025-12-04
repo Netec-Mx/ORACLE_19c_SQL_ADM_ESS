@@ -32,6 +32,8 @@
 
 El siguiente diagrama representa la relación del **archivo de control** con los **datafiles**, **redo logs** y **archivelogs**, mostrando su rol como elemento central de metadatos que permite la apertura y sincronización de la base de datos.
 
+<br/><br/>
+
 ![controlfile\_diagram](../images/p5-5.png)
 
 <br/><br/>
@@ -54,7 +56,7 @@ El siguiente diagrama representa la relación del **archivo de control** con los
 1. Muestra el valor del parámetro de inicialización:
 
    ```sql
-   SQL> SHOW PARAMETER control_files;
+   SHOW PARAMETER control_files;
    ```
 2. Verifica la ubicación física y el número de archivos definidos.
 
@@ -65,21 +67,21 @@ El siguiente diagrama representa la relación del **archivo de control** con los
 1. Examina la vista `V$CONTROLFILE` para listar los archivos de control existentes:
 
    ```sql
-   SQL> SELECT NAME, STATUS, IS_RECOVERY_DEST_FILE FROM V$CONTROLFILE;
+   SELECT NAME, STATUS, IS_RECOVERY_DEST_FILE FROM V$CONTROLFILE;
    ```
 
 2. Consulta la vista `V$CONTROLFILE_RECORD_SECTION` para identificar las secciones y registros que conforman el archivo de control:
 
    ```sql
-   SQL> SELECT TYPE, RECORD_SIZE, RECORDS_TOTAL, RECORDS_USED FROM V$CONTROLFILE_RECORD_SECTION;
+   SELECT TYPE, RECORD_SIZE, RECORDS_TOTAL, RECORDS_USED FROM V$CONTROLFILE_RECORD_SECTION;
    ```
 
 3. Exporta los resultados a un archivo plano mediante spool:
 
    ```sql
-   SQL> SPOOL /home/oracle/control_sections.txt
-   SQL> SELECT * FROM V$CONTROLFILE_RECORD_SECTION;
-   SQL> SPOOL OFF;
+   SPOOL /home/oracle/control_sections.txt
+   SELECT * FROM V$CONTROLFILE_RECORD_SECTION;
+   SPOOL OFF;
    ```
 
 <br/><br/>
@@ -89,19 +91,19 @@ El siguiente diagrama representa la relación del **archivo de control** con los
 1. Ejecuta el respaldo del archivo de control en formato texto:
 
    ```sql
-   SQL> ALTER DATABASE BACKUP CONTROLFILE TO TRACE;
+   ALTER DATABASE BACKUP CONTROLFILE TO TRACE;
    ```
 
 2. Genera un respaldo en una ubicación específica:
 
    ```sql
-   SQL> ALTER DATABASE BACKUP CONTROLFILE TO TRACE AS '/home/oracle/control.trx';
+   ALTER DATABASE BACKUP CONTROLFILE TO TRACE AS '/home/oracle/control.trx';
    ```
 
 3. Verifica el contenido del archivo generado usando un editor de texto:
 
    ```bash
-   $ cat /home/oracle/control.trx
+   cat /home/oracle/control.trx
    ```
 
 <br/><br/>
@@ -119,8 +121,6 @@ Guarda tu script como `p06_controlfile_cert.sql` y ejecútalo.
 <br/><br/>
 
 ## **Resultado Esperado**
-
-* Captura de pantalla mostrando:
 
   * El resultado del comando `SHOW PARAMETER control_files`.
   * El contenido resumido de las vistas `V$CONTROLFILE` y `V$CONTROLFILE_RECORD_SECTION`.
