@@ -54,7 +54,8 @@ El siguiente esquema muestra la relación entre las transacciones activas, el ta
 
    ```bash
    sqlplus / as sysdba
-   SQL> show user
+   
+   show user
    ```
 
 <br/><br/>
