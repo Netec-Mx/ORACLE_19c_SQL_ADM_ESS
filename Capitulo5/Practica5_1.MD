@@ -37,6 +37,8 @@
 
 El siguiente diagrama representa la relación entre las estructuras lógicas y físicas de almacenamiento en Oracle Database:
 
+<br/><br/>
+
 ![Estructuras Almacenamiento](../images/p5-1.png)
 
 <br/><br/>
