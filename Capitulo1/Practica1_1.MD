@@ -64,7 +64,7 @@ El objetivo es familiarizarse con el acceso al entorno Linux sobre el cual se re
 1. Ejecuta el siguiente comando para comprobar tu usuario actual y grupos asociados:
 
    ```bash
-   $ id
+   id
    ```
 
 <br/><br/>
@@ -74,7 +74,7 @@ El objetivo es familiarizarse con el acceso al entorno Linux sobre el cual se re
 1. Cambia a la cuenta **root**:
 
    ```bash
-   $ su - root
+   su - root
    ```
 2. Ingresa la contraseña `Oracle1`.
 3. Verifica que el *prompt* cambie de `$` a `#`, indicando que ahora eres superusuario.
@@ -86,42 +86,42 @@ El objetivo es familiarizarse con el acceso al entorno Linux sobre el cual se re
 1. Muestra las particiones y sistemas de archivos montados:
 
    ```bash
-   # mount -a
+   mount -a
    ```
 2. Revisa el espacio disponible y utilizado:
 
    ```bash
-   # df -h
+   df -h
    ```
 3. Consulta la versión y arquitectura del sistema:
 
    ```bash
-   # uname -a
+   uname -a
    ```
 
 4. Verifica el estado de LISTENER
 
    ```bash
-   # lsnrctl status
+   lsnrctl status
    ```
 
 4. Verifica las variables de ambiente asociadas a Oracle
 
    ```bash
-   # env | grep -i oracle
+   env | grep -i oracle
    ```
 
 5. Verifica los alias del comando `rlwrap`
 
    ```bash
-   # alias | grep rlwrap
+   alias | grep rlwrap
    ```
 
 6. Verifica el acceso a `sqlplus`
 
    ```bash
-   # whereis sqlplus
-   # sqlplus hr/Oracle1
+   whereis sqlplus
+   sqlplus hr/Oracle1
    ```
 
 <br/><br/>
