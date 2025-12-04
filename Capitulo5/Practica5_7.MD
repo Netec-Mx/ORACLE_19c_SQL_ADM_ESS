@@ -37,6 +37,8 @@
 
 Diagrama conceptual del Redo Log online (grupos con miembros multiplexados):
 
+<br/><br/>
+
 ![Redo Log Online](../images/p5-6.png)
 
 <br/><br/>
