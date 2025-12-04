@@ -40,6 +40,8 @@
 
 El siguiente diagrama representa la estructura del **ADR (Automatic Diagnostic Repository)** y cómo se organiza la información de diagnósticos dentro del entorno Oracle:
 
+<br/><br/>
+
 ![adr\_structure](../images/p8-9.png)
 
 <br/><br/>
@@ -78,7 +80,7 @@ El siguiente diagrama representa la estructura del **ADR (Automatic Diagnostic R
 
 ### **Tarea 2. Iniciar ADRCI y verificar configuración base**
 
-1. Desde el sistema operativo, inicia la herramienta:
+1. Desde el sistema operativo, inicia la herramienta ADRCI. La utilidad se abrirá en modo interactivo, lo cual podrás identificar porque el prompt cambiará.
 
    ```bash
    adrci
@@ -87,25 +89,25 @@ El siguiente diagrama representa la estructura del **ADR (Automatic Diagnostic R
 2. Si el valor de **ADR Base** aparece vacío, establécelo manualmente:
 
    ```bash
-   adrci> set base /u01/app/oracle
+   set base /u01/app/oracle
    ```
 
 3. Muestra la información de las instancias disponibles:
 
    ```bash
-   adrci> show home
+   show home
    ```
 
 4. Verifica la ayuda general de comandos:
 
    ```bash
-   adrci> help
+   help
    ```
 
 5. Solicita ayuda específica sobre el comando `show alert`:
 
    ```bash
-   adrci> help show alert
+   help show alert
    ```
 
 <br/><br/>
@@ -115,7 +117,7 @@ El siguiente diagrama representa la estructura del **ADR (Automatic Diagnostic R
 1. Muestra el contenido del archivo de alertas de la instancia:
 
    ```bash
-   adrci> show alert
+   show alert
    ```
 
    *(Esto abrirá el archivo en modo `vi`. Usa `[ESC] :q` para salir.)*
@@ -123,19 +125,19 @@ El siguiente diagrama representa la estructura del **ADR (Automatic Diagnostic R
 2. Filtra los mensajes de error que contengan el texto **ORA-**:
 
    ```bash
-   adrci> show alert -p "message_text like '%ORA-%'"
+   show alert -p "message_text like '%ORA-%'"
    ```
 
 3. Establece el home específico de la instancia **orcl**:
 
    ```bash
-   adrci> set home diag/rdbms/orcl/orcl
+   set home diag/rdbms/orcl/orcl
    ```
 
 4. Muestra las últimas cinco líneas del archivo de alertas:
 
    ```bash
-   adrci> show alert -tail 5
+   show alert -tail 5
    ```
 
 <br/><br/>
@@ -145,19 +147,19 @@ El siguiente diagrama representa la estructura del **ADR (Automatic Diagnostic R
 1. Lista los **problemas** detectados en la instancia:
 
    ```bash
-   adrci> show problem
+   show problem
    ```
 
 2. Lista los **incidentes** registrados:
 
    ```bash
-   adrci> show incident
+   show incident
    ```
 
 3. Muestra el detalle de un incidente en particular (reemplaza `<número>` por el ID del incidente):
 
    ```bash
-   adrci> show incident -mode detail -p "incident_id=<número>"
+   show incident -mode detail -p "incident_id=<número>"
    ```
 
 <br/><br/>
@@ -167,26 +169,26 @@ El siguiente diagrama representa la estructura del **ADR (Automatic Diagnostic R
 1. Solicita ayuda sobre el comando `purge`:
 
    ```bash
-   adrci> help purge
+   help purge
    ```
 
 2. Elimina todo el contenido del repositorio ADR que tenga más de **30 días** (30 × 24 × 60 = 43200 minutos):
 
    ```bash
-   adrci> purge -age 43200
+   purge -age 43200
    ```
 
 3. Purga únicamente los **incidentes antiguos** mayores a 30 días:
 
    ```bash
-   adrci> purge -age 43200 -type INCIDENT
+   purge -age 43200 -type INCIDENT
    ```
 
 4. Verifica nuevamente con:
 
    ```bash
-   adrci> show problem
-   adrci> show incident
+   show problem
+   show incident
    ```
 
 <br/><br/>
@@ -201,5 +203,6 @@ Al finalizar la práctica, deberás:
 * Ejecutar comandos de **purga** para mantener el repositorio limpio.
 * Evidenciar tu trabajo mediante capturas del contenido de `show home`, `show alert` y la lista de problemas/incidentes.
 
+<br/><br/>
 
 ![ADRCI](../images/p8-10.png)
