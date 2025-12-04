@@ -40,6 +40,8 @@
 ## Objetivo visual
 
 **Diagrama “Ciclo DML y Transacciones”**: muestra el flujo `INSERT/UPDATE/DELETE → Buffer Cache → Redo → SAVEPOINT → ROLLBACK/COMMIT`, destacando que el dato no es permanente hasta **COMMIT**.
+
+<br/><br/>
 ![flujo-dml](../images/dml.png)
 
 <br/><br/>
