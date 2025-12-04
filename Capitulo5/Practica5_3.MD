@@ -13,7 +13,7 @@
 
 ## **Duración estimada**
 
-**25 minutos**
+25 minutos
 
 <br/><br/>
 
@@ -29,9 +29,11 @@
 
 <br/><br/>
 
-## **Objetivo Visual**
+## **Objetivo visual**
 
 El siguiente esquema muestra cómo un tablespace puede **extenderse** al **redimensionar un datafile existente** o al **agregar uno nuevo**:
+
+<br/><br/>
 
 ![Objetivo Visual](../images/p5-3.png)
 

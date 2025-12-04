@@ -31,9 +31,11 @@
 
 <br/><br/>
 
-## **Objetivo Visual**
+## **Objetivo visual**
 
 El objetivo es familiarizarse con el acceso al entorno Linux sobre el cual se realizarán las prácticas de Oracle Database.
+
+<br/><br/>
 
 ![BASH](../images/bash.png)
 

@@ -11,7 +11,7 @@
 
 ## **Duración estimada**
 
-90–110 minutos.
+90 – 110 minutos
 
 ## **Tabla de Ayuda**
 
@@ -39,7 +39,7 @@
 
 <br/><br/>
 
-## **Objetivo Visual**
+## **Objetivo visual**
 
 
 | **Dato de entrada**    | **Función**                  | **Tipo devuelto**                    | **Notas**                              |

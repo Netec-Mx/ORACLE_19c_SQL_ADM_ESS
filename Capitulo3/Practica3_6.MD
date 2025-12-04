@@ -1,4 +1,4 @@
-# **Práctica 3.6 – Modificación de Parámetros**
+# **Práctica 3.6 Modificación de Parámetros**
 
 
 ## **Objetivos**
@@ -28,7 +28,7 @@
 
 <br/><br/>
 
-## **Objetivo Visual**
+## **Objetivo visual**
 
 El siguiente diagrama muestra la relación entre **PFILE**, **SPFILE** y los valores en **memoria** de la instancia.
 

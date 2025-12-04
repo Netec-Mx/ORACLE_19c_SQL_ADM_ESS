@@ -12,7 +12,7 @@
 
 ## **Duración estimada**
 
-**35 minutos**
+35 minutos
 
 <br/><br/>
 
@@ -31,9 +31,11 @@
 
 <br/><br/>
 
-## **Objetivo Visual**
+## **Objetivo visual**
 
 El siguiente diagrama muestra la relación entre el entorno gráfico de **SQL Developer**, las **conexiones de usuario****.
+
+<br/><br/>
 
 ![objetivo-visual](../images/p8-8.png)
 
