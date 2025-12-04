@@ -69,7 +69,7 @@ El siguiente diagrama representa la comunicación entre la instancia **ORCL** y 
 2. Modifica el parámetro para asociarlo al nuevo listener:
 
    ```sql
-   alter system set LOCAL_LISTENER='LISTENERPRA' SCOPE=BOTH;
+   alter system set LOCAL_LISTENER='praorcl,pradev,orcl' SCOPE=BOTH;
    ```
 3. Verifica el cambio:
 
@@ -159,7 +159,7 @@ show parameter local_listener
 
 NAME              TYPE   VALUE
 ----------------- ------ ---------------
-local_listener    string LISTENERPRA
+local_listener    string PRAORCL,PRADEV,ORCL
 
 select instance_name from v$instance;
 
