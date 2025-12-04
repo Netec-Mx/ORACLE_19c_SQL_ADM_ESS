@@ -35,10 +35,12 @@
 
 <br/> <br/>
 
-## **Objetivo Visual**
+## **Objetivo visual**
 
 El diagrama representa la estructura de tablas relacionadas con la gestión de empleados, sus departamentos, puestos, ubicaciones geográficas y regiones. Las líneas punteadas indican las relaciones entre tablas mediante llaves foráneas (foreign keys).
  
+<br/><br/>
+
 ![diagrama1](../images/HR.png)
 
 <br/><br/>

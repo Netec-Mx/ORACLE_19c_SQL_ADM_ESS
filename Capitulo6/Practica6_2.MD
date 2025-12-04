@@ -43,7 +43,7 @@ El siguiente diagrama muestra la relación entre el cliente Oracle y el nuevo li
 
 ## **Instrucciones**
 
-### **Tarea 1: Configurar entorno**
+### **Tarea 1. Configurar entorno**
 
 1. Define las variables de entorno de Oracle:
 
@@ -55,7 +55,7 @@ El siguiente diagrama muestra la relación entre el cliente Oracle y el nuevo li
 
 <br/><br/>
 
-### **Tarea 2: Crear el nuevo listener**
+### **Tarea 2. Crear el nuevo listener**
 
 1. Ejecuta la herramienta **Oracle Net Manager**:
 
@@ -75,7 +75,7 @@ El siguiente diagrama muestra la relación entre el cliente Oracle y el nuevo li
 
 <br/><br/>
 
-### **Tarea 3: Validar la configuración**
+### **Tarea 3. Validar la configuración**
 
 1. Desde la terminal, revisa el contenido de los archivos actualizados:
 

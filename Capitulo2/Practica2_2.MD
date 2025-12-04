@@ -13,7 +13,7 @@
 
 ## **Duración estimada**
 
-**60 a 75 minutos** 
+60 - 75 minutos 
 
 <br/><br/>
 
@@ -37,8 +37,11 @@
 
 **Diagrama: “Ciclo de vida de una tabla en Oracle Database”**
 
+<br/><br/>
+
 ![DML & DDL](../images/p2-1.png)
 
+<br/><br/>
 > Este ciclo ilustra cómo el DBA o desarrollador controla la definición de los objetos a lo largo de su vida útil.
 
 <br/><br/>

@@ -42,7 +42,7 @@ El siguiente diagrama representa la comunicación entre la instancia **ORCL** y 
 
 ## **Instrucciones**
 
-### **Tarea 1: Preparar el entorno**
+### **Tarea 1. Preparar el entorno**
 
 1. Configura las variables de entorno:
 
@@ -58,7 +58,7 @@ El siguiente diagrama representa la comunicación entre la instancia **ORCL** y 
 
 <br/><br/>
 
-### **Tarea 2: Verificar y modificar el parámetro**
+### **Tarea 2. Verificar y modificar el parámetro**
 
 1. Consulta el valor actual del parámetro:
 
@@ -79,7 +79,7 @@ El siguiente diagrama representa la comunicación entre la instancia **ORCL** y 
 
 <br/><br/>
 
-### **Tarea 3: Verificar el listener y probar la conexión**
+### **Tarea 3. Verificar el listener y probar la conexión**
 
 1. Comprueba que el listener está activo:
 
@@ -102,7 +102,7 @@ El siguiente diagrama representa la comunicación entre la instancia **ORCL** y 
 
 <br/><br/>
 
-### **Tarea 4: Validar en SQL Developer**
+### **Tarea 4. Validar en SQL Developer**
 
 1. Abre **SQL Developer**.
 
@@ -116,7 +116,7 @@ El siguiente diagrama representa la comunicación entre la instancia **ORCL** y 
 
 <br/><br/>
 
-### **Tarea 5: Reiniciar la base de datos**
+### **Tarea 5. Reiniciar la base de datos**
 
 1. Reinicia la base de datos para garantizar la persistencia de la configuración:
 

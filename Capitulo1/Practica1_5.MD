@@ -13,7 +13,8 @@
 
 
 ## **Duración estimada**
-   70–85 minutos.
+
+70 – 85 minutos.
 
 <br/><br/>
 
@@ -50,11 +51,15 @@
 <br/><br/>
 
 
-## **Objetivo Visual**
+## **Objetivo visual**
 
 Operadores de Conjuntos, son útiles para combinar resultados de consultas independientes
 
+<br/>
+
  ![Sets Operators](../images/sets.png)
+
+<br/><br/>
 
 ## **Instrucciones**
 
