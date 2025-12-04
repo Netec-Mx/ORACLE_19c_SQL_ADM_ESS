@@ -38,6 +38,8 @@
 
 El siguiente diagrama representa la relación entre **usuarios**, **roles**, **privilegios** y **objetos** dentro del esquema de seguridad de Oracle Database:
 
+<br/><br/>
+
 ![diagrama1](../images/p4-2.png)
 
 <br/><br/>
@@ -145,11 +147,13 @@ Investiga qué usuarios poseen los siguientes privilegios directos:
    ```sql
    SELECT grantee FROM dba_sys_privs WHERE privilege = 'CREATE USER';
    ```
+
 2. `CREATE SESSION`
 
    ```sql
    SELECT grantee FROM dba_sys_privs WHERE privilege = 'CREATE SESSION';
    ```
+
 3. `CREATE ROLE`
 
    ```sql
