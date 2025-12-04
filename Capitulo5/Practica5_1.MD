@@ -50,7 +50,7 @@ El siguiente diagrama representa la relación entre las estructuras lógicas y f
 1. Abre una terminal y conéctate como administrador:
 
    ```bash
-   $ sqlplus / as sysdba
+   sqlplus / as sysdba
    ```
 2. Verifica la conexión activa:
 
@@ -78,6 +78,7 @@ El siguiente diagrama representa la relación entre las estructuras lógicas y f
    COL archivo FORMAT a40
    COL tablespace FORMAT a20
    SET linesize 120
+   
    SELECT rpad(a.tablespace_name,10) tablespace,
           rpad(a.file_name,40) archivo
    FROM dba_data_files a;
