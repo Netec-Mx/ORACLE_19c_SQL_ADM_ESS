@@ -32,6 +32,7 @@
 
 El siguiente diagrama muestra la relación entre **PFILE**, **SPFILE** y los valores en **memoria** de la instancia.
 
+<br/><br/>
 
 ![Parameter Files](../images/spfile.gif)
 
