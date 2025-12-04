@@ -31,6 +31,8 @@
 
 El siguiente esquema muestra la relación entre las transacciones activas, el tablespace UNDO y las operaciones de *Flashback* dependientes de la retención configurada.
 
+<br/><br/>
+
 ![undo\_tablespace](../images/p5-4.png)
 
 <br/><br/>
@@ -40,15 +42,18 @@ El siguiente esquema muestra la relación entre las transacciones activas, el ta
 ### **Tarea 1. Conexión al entorno**
 
 1. Accede al sistema con el usuario `oracle`.
+
 2. Configura el entorno de la base de datos:
 
    ```bash
-   $ . oraenv   # orcl
+   # Instancia orcl, el punto inicial es muy importante
+   . oraenv    
    ```
+
 3. Inicia sesión como usuario administrativo:
 
    ```bash
-   $ sqlplus / as sysdba
+   sqlplus / as sysdba
    SQL> show user
    ```
 
@@ -59,7 +64,7 @@ El siguiente esquema muestra la relación entre las transacciones activas, el ta
 1. Dentro de SQL*Plus, muestra los parámetros relacionados con UNDO:
 
    ```sql
-   SQL> show parameter undo
+   show parameter undo
    ```
 2. Anota los valores actuales de `undo_management`, `undo_tablespace` y `undo_retention`.
 
@@ -70,13 +75,15 @@ El siguiente esquema muestra la relación entre las transacciones activas, el ta
 1. Dirígete al directorio donde se encuentran los scripts:
 
    ```bash
-   $ cd $HOME/codes/05_almacenamiento
+   cd $HOME/codes/05_almacenamiento
    ```
+
 2. Ejecuta el script para visualizar el tamaño actual del tablespace:
 
    ```bash
-   $ sqlplus / as sysdba @p03_undosize.sql
+   sqlplus / as sysdba @p03_undosize.sql
    ```
+
 3. Interpreta los resultados e identifica el tamaño asignado y los bloques en uso.
 
 <br/><br/>
@@ -86,8 +93,9 @@ El siguiente esquema muestra la relación entre las transacciones activas, el ta
 1. En el mismo directorio, ejecuta el siguiente script:
 
    ```bash
-   $ sqlplus / as sysdba @p04_monitoreo.sql
+   sqlplus / as sysdba @p04_monitoreo.sql
    ```
+
 2. Determina el momento del día en el que se generan más bloques UNDO activos.
 
 3. Anota las horas de mayor actividad y analiza la relación con el volumen de transacciones.
@@ -105,13 +113,13 @@ El siguiente esquema muestra la relación entre las transacciones activas, el ta
 2. Modifica la retención del UNDO:
 
    ```sql
-   SQL> ALTER SYSTEM SET UNDO_RETENTION = 86400;
+   ALTER SYSTEM SET UNDO_RETENTION = 86400;
    ```
    
 3. Verifica el cambio con:
 
    ```sql
-   SQL> SHOW PARAMETER undo_retention;
+   SHOW PARAMETER undo_retention;
    ```
 
 <br/><br/>
