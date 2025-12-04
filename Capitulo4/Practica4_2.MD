@@ -32,6 +32,8 @@
 
 El siguiente diagrama ilustra la relación entre **usuarios**, **roles** y **privilegios** en Oracle:
 
+<br/><br/>
+
 ![Usuario, roles y privilegios](../images/p4-2.png)
 
 <br/><br/>
