@@ -34,8 +34,9 @@
 
 El siguiente diagrama representa la comunicación entre la instancia **ORCL** y el nuevo listener **LISTENERPRA** tras la modificación del parámetro `LOCAL_LISTENER`:
 
-![LISTENERPRA](../images/p6-3.png)
+<br/><br/>
 
+![LISTENERPRA](../images/p6-3.png)
 
 <br/><br/>
 
@@ -46,13 +47,13 @@ El siguiente diagrama representa la comunicación entre la instancia **ORCL** y 
 1. Configura las variables de entorno:
 
    ```bash
-   $ . oraenv
-   orcl
+   . oraenv
    ```
+
 2. Inicia sesión como administrador:
 
    ```bash
-   $ sqlplus / as sysdba
+   sqlplus / as sysdba
    ```
 
 <br/><br/>
@@ -62,17 +63,18 @@ El siguiente diagrama representa la comunicación entre la instancia **ORCL** y 
 1. Consulta el valor actual del parámetro:
 
    ```sql
-   SQL> show parameter local_listener;
+   show parameter local_listener;
    ```
+
 2. Modifica el parámetro para asociarlo al nuevo listener:
 
    ```sql
-   SQL> alter system set LOCAL_LISTENER='LISTENERPRA' SCOPE=BOTH;
+   alter system set LOCAL_LISTENER='LISTENERPRA' SCOPE=BOTH;
    ```
 3. Verifica el cambio:
 
    ```sql
-   SQL> show parameter local_listener;
+   show parameter local_listener;
    ```
 
 <br/><br/>
@@ -82,18 +84,20 @@ El siguiente diagrama representa la comunicación entre la instancia **ORCL** y 
 1. Comprueba que el listener está activo:
 
    ```bash
-   $ lsnrctl status LISTENERPRA
+   lsnrctl status LISTENERPRA
    ```
+
 2. Prueba la conexión a la base de datos usando el nuevo listener:
 
    ```bash
-   $ sqlplus hr/Oracle1@localhost:1551/orcl
+   sqlplus hr/Oracle1@localhost:1551/orcl
    ```
+
 3. Muestra los detalles de la sesión conectada:
 
    ```sql
-   SQL> show user;
-   SQL> select instance_name, host_name from v$instance;
+   show user;
+   select instance_name, host_name from v$instance;
    ```
 
 <br/><br/>
@@ -101,11 +105,13 @@ El siguiente diagrama representa la comunicación entre la instancia **ORCL** y 
 ### **Tarea 4: Validar en SQL Developer**
 
 1. Abre **SQL Developer**.
+
 2. Edita la conexión asociada a **ORCL**:
 
    * **Host:** `localhost`
    * **Puerto:** `1551`
    * **Service name:** `orcl`
+
 3. Prueba la conexión y guarda los cambios.
 
 <br/><br/>
@@ -115,13 +121,14 @@ El siguiente diagrama representa la comunicación entre la instancia **ORCL** y 
 1. Reinicia la base de datos para garantizar la persistencia de la configuración:
 
    ```sql
-   SQL> shutdown immediate;
-   SQL> startup;
+   shutdown immediate;
+   startup;
    ```
+
 2. Verifica nuevamente el parámetro:
 
    ```sql
-   SQL> show parameter local_listener;
+   show parameter local_listener;
    ```
 
 <br/><br/>
@@ -148,15 +155,16 @@ Guarda y comenta cada instrucción dentro del script.
 
 
 ```
-SQL> show parameter local_listener
+show parameter local_listener
 
 NAME              TYPE   VALUE
 ----------------- ------ ---------------
 local_listener    string LISTENERPRA
 
-SQL> select instance_name from v$instance;
+select instance_name from v$instance;
 
 INSTANCE_NAME
 --------------
 orcl
+
 ```
