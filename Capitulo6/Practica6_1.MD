@@ -33,6 +33,8 @@
 
 El siguiente diagrama representa la interacción entre el cliente Oracle y el listener local a través del servicio **praorcl**:
 
+<br/><br/>
+
 ![Listener.ora](../images/p6-1.png)
 
 <br/><br/>
@@ -44,14 +46,14 @@ El siguiente diagrama representa la interacción entre el cliente Oracle y el li
 1. Establece la variable de entorno de Oracle:
 
    ```bash
-   $ . oraenv
-   orcl
+   . oraenv
    ```
+
 2. Crea respaldos de los archivos de configuración:
 
    ```bash
-   $ cp $ORACLE_HOME/network/admin/tnsnames.ora $HOME/tnsnames.backup
-   $ cp $ORACLE_HOME/network/admin/listener.ora $HOME/listener.backup
+   cp $ORACLE_HOME/network/admin/tnsnames.ora $HOME/tnsnames.backup
+   cp $ORACLE_HOME/network/admin/listener.ora $HOME/listener.backup
    ```
 
 <br/><br/>
@@ -61,16 +63,17 @@ El siguiente diagrama representa la interacción entre el cliente Oracle y el li
 1. Ejecuta la herramienta **Oracle Net Manager**:
 
    ```bash
-   $ netmgr
+   netmgr
    ```
 2. En el árbol de navegación, expande la opción **Local** y selecciona **Service Naming**.
 3. Haz clic en el símbolo **+** (verde) para crear un nuevo servicio.
 4. Especifica el nombre: **praorcl**.
 5. Selecciona el protocolo **TCP/IP**.
-6. Introduce los valores:
+6. Introduce los valores, verifica el nombre del host donde estes trabajando:
 
    * **Host:** `localhost.localdomain`
    * **Puerto:** `1551`
+
 7. Selecciona el **Service Name**: `orcl`.
 8. Guarda los cambios con **File → Save Network Configuration**.
 
@@ -86,14 +89,15 @@ El siguiente diagrama representa la interacción entre el cliente Oracle y el li
 2. Cierra la herramienta y verifica desde SQL*Plus:
 
    ```bash
-   $ sqlplus hr/Oracle1@praorcl
+   sqlplus hr/Oracle1@praorcl
    ```
+
 3. Comprueba la sesión:
 
    ```sql
-   SQL> show user;
-   SQL> show con_name;
-   SQL> select instance_name, host_name from v$instance;
+   show user;
+   show con_name;
+   select instance_name, host_name from v$instance;
    ```
 
 <br/><br/>
@@ -113,10 +117,8 @@ Verifica la conexión desde SQL*Plus y documenta los archivos modificados y las 
 * Registro visual (captura) del resultado del comando:
 
   ```sql
-  SQL> select instance_name, host_name from v$instance;
+  select instance_name, host_name from v$instance;
   ```
-
-
 
 ```
 INSTANCE_NAME  HOST_NAME
