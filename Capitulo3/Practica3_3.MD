@@ -34,6 +34,8 @@
 
 El siguiente diagrama representa el ciclo de vida de una base de datos Oracle, mostrando las transiciones entre los estados **NOMOUNT**, **MOUNT** y **OPEN**, junto con los comandos asociados a cada etapa del proceso de inicio y cierre.
 
+<br/><br/>
+
 ![ciclo\_instancia](../images/ciclo_instancia.png)
 
 <br/><br/>
