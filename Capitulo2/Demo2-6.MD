@@ -25,6 +25,9 @@
 | Uso compartido     | Una secuencia puede usarse en varias tablas | Muy común en la práctica                   |
 | No transaccional   | NEXTVAL no participa en COMMIT/ROLLBACK     | Nunca se revierte                          |
 
+> Nota: El tamaño del CACHE es mayor o igual que la cantidad de valores del ciclo de la secuencia. Si no usamos CACHE por defecto es 20
+> En caso de no cumplir esta regla oracle despliega un ORA-04013
+
 <br/><br/>
 
 ## Instrucciones
@@ -73,7 +76,8 @@ SELECT seq_gap_demo.NEXTVAL FROM dual; -- 2
 CREATE SEQUENCE seq_cycle_demo
 START WITH 1
 MAXVALUE 3
-CYCLE;
+CYCLE
+NOCACHE;
 
 SELECT seq_cycle_demo.NEXTVAL FROM dual; -- 1
 SELECT seq_cycle_demo.NEXTVAL FROM dual; -- 2
