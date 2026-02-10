@@ -99,7 +99,7 @@ SELECT seq_cycle_demo.NEXTVAL FROM dual; -- 2
 ```sql
 CREATE SEQUENCE seq_cache_demo
 START WITH 1
-CACHE 20;
+CACHE 1000;
 
 SELECT seq_cache_demo.NEXTVAL FROM dual; -- 1
 SELECT seq_cache_demo.NEXTVAL FROM dual; -- 2
@@ -108,16 +108,16 @@ SELECT seq_cache_demo.NEXTVAL FROM dual; -- 2
 > Simula mentalmente en examen:
 
 ```sql
--- SHUTDOWN IMMEDIATE;
+-- SHUTDOWN ABORT;
 -- STARTUP;
 ```
 
 ```sql
-SELECT seq_cache_demo.NEXTVAL FROM dual; -- 21 (o mayor)
+SELECT seq_cache_demo.NEXTVAL FROM dual; -- 1002 (o mayor)
 ```
 
 > **Observación:**
-> Los valores **3–20 se pierden**.
+> Los valores **3–1000 se pierden**.
 > Gap causado **sin ROLLBACK**.
 
 <br/><br/>
