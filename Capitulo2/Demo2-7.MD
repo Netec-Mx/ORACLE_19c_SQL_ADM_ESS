@@ -3,7 +3,8 @@
 
 ## DEMO 1 — WITH CHECK OPTION
 
-Objetivo *Ver que NO afecta SELECT, solo INSERT / UPDATE*
+Objetivo 
+* Ver que NO afecta SELECT, solo INSERT / UPDATE
 
 <br/><br/>
 
@@ -49,8 +50,7 @@ INSERT INTO v_emp_10 VALUES (3, 'CARLA', 20);
 COMMIT;
 ```
 
->Nota: **INSERT PERMITIDO**
-Aunque **NO cumple** el WHERE de la vista
+>Nota: **INSERT PERMITIDO**, aunque **NO cumple** el WHERE de la vista
 
 <br/><br/>
 
@@ -75,14 +75,14 @@ INSERT INTO v_emp_10 VALUES (4, 'PEDRO', 20);
 
 ### Conclusión demo 1
 
-> WITH CHECK OPTION **NO cambia SELECT**
-> **SOLO controla INSERT y UPDATE**
+> WITH CHECK OPTION **NO cambia SELECT**, **SOLO controla INSERT y UPDATE**
 
 <br/><br/>
 
 ## DEMO 2 — DEFERRABLE vs IMMEDIATE
 
-El objetivo es *Ver cuándo Oracle valida constraints*
+Objetivo
+* Ver cuándo Oracle valida constraints
 
 <br/><br/>
 
@@ -141,15 +141,16 @@ INSERT INTO emp VALUES (2, 60);
 
 ### Conclusión demo 2
 
-> ✔ IMMEDIATE valida **en el statement**
-> ✔ DEFERRABLE puede validar **al COMMIT**
-> ✔ NOT NULL **NO puede ser DEFERRABLE**
+* IMMEDIATE valida **en el statement**
+* DEFERRABLE puede validar **al COMMIT**
+* NOT NULL **NO puede ser DEFERRABLE**
 
 <br/><br/>
 
 ## DEMO 3 — Recuento exacto + Transacciones
 
-El objetivo es *Ver cuándo Oracle crea o NO una transacción*
+Objetivo
+* Ver cuándo Oracle crea o NO una transacción
 
 <br/><br/>
 
@@ -183,7 +184,7 @@ INSERT INTO t VALUES (1);
 SELECT xid, status FROM v$transaction;
 ```
 
-✔ Aparece un XID
+>Nota: Aparece un XID
 
 <br/><br/>
 
@@ -209,25 +210,17 @@ INSERT INTO t VALUES (2);
 SELECT xid, status FROM v$transaction;
 ```
 
->Nota: ✔ **Nuevo XID distinto**
+>Nota: **Nuevo XID distinto**
 
 <br/><br/>
 
 ### Conclusión demo 3
 
-> SELECT no inicia transacción
-> DDL mata la transacción
-> El siguiente DML crea un XID nuevo
+* SELECT no inicia transacción
+* DDL mata la transacción
+* El siguiente DML crea un XID nuevo
 
 <br/><br/>
 
-## RESUMEN FINAL
 
-* WITH CHECK OPTION → **INSERT / UPDATE**
-* DEFERRABLE → **validación al COMMIT**
-* IMMEDIATE → **validación inmediata**
-* SELECT → **NO transacción**
-* DDL → **COMMIT implícito**
-
-<br/><br/>
 
