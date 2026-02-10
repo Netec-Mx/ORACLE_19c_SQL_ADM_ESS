@@ -40,6 +40,7 @@ DROP SEQUENCE seq_cycle_demo;
 DROP SEQUENCE seq_cache_demo;
 DROP SEQUENCE seq_shared_demo;
 DROP SEQUENCE seq_tx_demo;
+DROP SEQUENCE seq_demo
 
 DROP TABLE t_seq_1 PURGE;
 DROP TABLE t_seq_2 PURGE;
@@ -170,7 +171,36 @@ SELECT seq_tx_demo.NEXTVAL FROM dual; -- 2
 
 <br/><br/>
 
+### 7. POC - Valor actual  CURRVAL
 
 
+```sql
+CREATE SEQUENCE seq_demo;
 
+-- Falla
+SELECT seq_demo.CURRVAL FROM dual;
+-- ORA-08002
+
+-- Inicializa
+SELECT seq_demo.NEXTVAL FROM dual;  -- 1
+
+-- Ya no incrementa
+SELECT seq_demo.CURRVAL FROM dual;  -- 1
+SELECT seq_demo.CURRVAL FROM dual;  -- 1
+
+SELECT seq_demo.NEXTVAL FROM dual;  -- 2
+SELECT seq_demo.CURRVAL FROM dual;  -- 2
+
+COL sequence_name format a15
+SELECT sequence_name, last_number, cache_size
+FROM user_sequences
+WHERE sequence_name like 'SEQ_%';
+
+```
+
+<br/><br/>
+
+>Nota: ¿Qué es LAST_NUMBER?
+* NO es el último valor emitido
+* Es el próximo valor que Oracle tiene preparado, considerando CACHE
 
