@@ -83,7 +83,6 @@ Resultado:
 
 ```
 ID
-<br/><br/>-
 101
 ```
 
