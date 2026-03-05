@@ -1,17 +1,29 @@
+<img src="images/neteclogo (2).png" alt="logo" width="300"/>
+
+
+
 # ORACLE_19c_SQL_ADM_ESS
+
+## Plataforma de laboratorios
+
+Te damos la bienvenida a la **plataforma de laboratorios** del curso **Base de Datos Oracle: SQL y Administración**. Aquí podrás explorar diferentes tecnologías a través de prácticas guiadas. ¡Desarrolla tus habilidades y lleva tus conocimientos al siguiente nivel!
 
 Este curso integral se enfoca en dos áeas principales: Fundamentos de SQL en Oracle Database y Taller de Administración de Bases de Datos Oracle. Los primeros dos módulos te capacitarán para interactuar con la base de datos utilizando el lenguaje SQL. Aprenderás a recuperar, manipular y gestionar datos de forma eficiente, desde consultas básicas hasta el uso de subconsultas y operadores avanzados. El tercer módulo está diseñado para los futuros administradores de bases de datos. Cubre la arquitectura de Oracle, la gestión de la seguridad, el almacenamiento, la configuración de la red, y el movimiento de datos, proporcionando las habilidades esenciales para mantener, monitorear y optimizar una base de datos Oracle.
 
 <br/><br/>
 
+## Lista de laboratorios
+
+Cada uno de estos laboratorios está diseñado para ofrecerte una experiencia práctica. Haz clic en los enlaces para comenzar.
+
 ### **Capítulo 1.** Fundamentos de SQL en Oracle Database
 
-* [Práctica 1.1 Acceso al Entorno de Curso](Capitulo1/Practica1_1.MD)
-* [Práctica 1.2 SQL Básicos](Capitulo1/Practica1_2.MD)
-* [Práctica 1.3 Funciones de una sola fila, Fechas y Conversión](Capitulo1/Practica1_3.MD)
-* [Práctica 1.4 Agregación y Operadores de Conjuntos](Capitulo1/Practica1_4.MD)
-* [Práctica 1.5 Joins en Oracle SQL](Capitulo1/Practica1_5.MD)
-* [Práctica 1.6 Subqueries](Capitulo1/Practica1_6.MD)
+* [**Práctica 1.1 Acceso al Entorno de Curso**](Capitulo1/Practica1_1.MD)
+* [**Práctica 1.2 SQL Básicos**](Capitulo1/Practica1_2.MD)
+* [**Práctica 1.3 Funciones de una sola fila, Fechas y Conversión**](Capitulo1/Practica1_3.MD)
+* [**Práctica 1.4 Agregación y Operadores de Conjuntos**](Capitulo1/Practica1_4.MD)
+* [**Práctica 1.5 Joins en Oracle SQL**](Capitulo1/Practica1_5.MD)
+* [**Práctica 1.6 Subqueries**](Capitulo1/Practica1_6.MD)
 
 <br/><br/>
 
@@ -69,8 +81,22 @@ Este curso integral se enfoca en dos áeas principales: Fundamentos de SQL en Or
 
 <br/><br/>
 
-### **Capítulo 8.** Herramientas
+### **Capítulo 8.** Herramientas de Oracle
 
 * [**Práctica 8.1 Uso de SQL*Plus**](Capitulo8/Practica8_1.MD)
 * [**Práctica 8.2 Uso de Oracle SQL Developer**](Capitulo8/Practica8_2.MD)
-* [**Práctica 8.3 Uso de la Herramienta ADRCI**](Capitulo8/Practica8_3.MD) 
+* [**Práctica 8.3 Uso de la Herramienta ADRCI**](Capitulo8/Practica8_3.MD)
+
+---
+
+
+
+## 📬 **Contacto y más información**
+
+
+
+Si tienes alguna pregunta o necesitas más detalles, no dudes en [contactarnos](mailto:soporte@netec.com). También puedes encontrar más recursos en nuestra [página](https://netec.com).
+
+---
+
+¡Gracias por visitar nuestra plataforma! No olvides revisar todos los laboratorios y comenzar tu viaje de aprendizaje hoy mismo.
