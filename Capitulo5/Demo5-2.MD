@@ -1,4 +1,4 @@
-# DEMO 5.2 Comparando UNDO con tabla normal vs una tabla teporal
+# DEMO 5.2 Comparando UNDO con tabla normal vs una tabla temporal
 
 
 ## Temas
