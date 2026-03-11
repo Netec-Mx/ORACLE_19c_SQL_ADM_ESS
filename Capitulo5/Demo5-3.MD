@@ -92,7 +92,7 @@ ALTER SYSTEM SET undo_tablespace = undotbs_demo SCOPE=BOTH;
 
 ALTER SYSTEM SET undo_retention = 300;  
 
--- 300 sefundos = 5 minutos
+-- 300 segundos = 5 minutos
 ```
 
 Crear tabla grande:
