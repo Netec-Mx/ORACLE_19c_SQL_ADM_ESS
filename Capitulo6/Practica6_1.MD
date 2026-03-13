@@ -41,7 +41,7 @@ El siguiente diagrama representa la interacción entre el cliente Oracle y el li
 
 ## **Instrucciones**
 
-### **Tarea 1: Preparar el entorno**
+### **Tarea 1. Preparar el entorno**
 
 1. Establece la variable de entorno de Oracle:
 
@@ -58,7 +58,7 @@ El siguiente diagrama representa la interacción entre el cliente Oracle y el li
 
 <br/><br/>
 
-### **Tarea 2: Configurar el nuevo servicio**
+### **Tarea 2. Configurar el nuevo servicio**
 
 1. Ejecuta la herramienta **Oracle Net Manager**:
 
@@ -79,7 +79,7 @@ El siguiente diagrama representa la interacción entre el cliente Oracle y el li
 
 <br/><br/>
 
-### **Tarea 3: Validar la conexión**
+### **Tarea 3. Validar la conexión**
 
 1. Prueba la conexión desde Net Manager con las credenciales:
 

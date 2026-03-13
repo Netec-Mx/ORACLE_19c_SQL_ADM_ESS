@@ -14,7 +14,7 @@
 
 ## **Duración estimada**
 
-**25 minutos**
+25 minutos
 
 <br/><br/>
 
@@ -33,9 +33,11 @@
 
 <br/><br/>
 
-## **Objetivo Visual**
+## **Objetivo visual**
 
 El siguiente diagrama representa la interacción entre el usuario, la herramienta SQL*Plus y la base de datos Oracle:
+
+<br/><br/>
 
 ![sqlplus](../images/p8-1.png)
 

@@ -13,7 +13,7 @@
 
 ## **Duración estimada**
 
-**30 minutos**
+30 minutos
 
 <br/><br/>
 
@@ -36,7 +36,7 @@
 
 <br/><br/>
 
-## **Objetivo Visual**
+## **Objetivo visual**
 
 El siguiente diagrama representa la estructura del **ADR (Automatic Diagnostic Repository)** y cómo se organiza la información de diagnósticos dentro del entorno Oracle:
 

@@ -12,7 +12,7 @@
 
 ## **Duración estimada**
 
-40–55 minutos
+40 – 55 minutos
 
 <br/><br/>
 
