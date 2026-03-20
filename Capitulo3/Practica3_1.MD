@@ -25,7 +25,7 @@ Reafirmar los conocimientos teóricos de terminología y conceptos fundamentales
 
 <br/><br/>
 
-## **Objetivo Visual**
+## **Objetivo visual**
 
 ![Arquitectura Oracle](../images/arquitectura.png)
 

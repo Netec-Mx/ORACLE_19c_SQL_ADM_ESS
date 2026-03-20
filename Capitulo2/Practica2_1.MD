@@ -1,7 +1,7 @@
-**Práctica 2.1 Usando DML para gestionar datos y transacciones**
+# **Práctica 2.1 Usando DML para gestionar datos y transacciones**
 
 
-## Objetivos
+## **Objetivos**
 
 * Crear una tabla de práctica y comprobar su estructura.
 * Insertar filas con y sin lista de columnas.
@@ -13,9 +13,9 @@
 
 <br/><br/>
 
-## Duración estimada
+## **Duración estimada**
 
-**55–70 minutos**  
+55 – 70 minutos  
 
 <br/><br/>
 
@@ -42,11 +42,14 @@
 **Diagrama “Ciclo DML y Transacciones”**: muestra el flujo `INSERT/UPDATE/DELETE → Buffer Cache → Redo → SAVEPOINT → ROLLBACK/COMMIT`, destacando que el dato no es permanente hasta **COMMIT**.
 
 <br/><br/>
+
 ![flujo-dml](../images/dml.png)
 
 <br/><br/>
 
-## Instrucciones 
+## **Instrucciones** 
+
+<br/>
 
 > **Entorno**: conéctate con un usuario con permisos de creación de objetos en tu instancia de práctica. No modifiques tablas del esquema HR de forma directa.
 
@@ -212,8 +215,8 @@
    ```
 
 <br/><br/>
-#
-## Tarea 7. Control fino de transacciones con `SAVEPOINT`
+
+### Tarea 7. Control fino de transacciones con `SAVEPOINT`
 
 > Realiza esta tarea **en una sola sesión** para apreciar el efecto.
 
@@ -270,7 +273,7 @@
 
 <br/><br/>
 
-## Resultado Esperado
+## **Resultado Esperado**
 
 * **Tabla creada** (`EMP_DML`) con PK y una restricción `UNIQUE` sobre `email`.
 * **Altas** realizadas con y sin lista de columnas, y mediante **script parametrizable**.
